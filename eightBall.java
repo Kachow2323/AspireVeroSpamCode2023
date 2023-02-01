@@ -1,18 +1,28 @@
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.concurrent.TimeUnit;
+import java.util.Date;
+
 public class eightBall {
     public static void main(String []args){
         int max = 20;
         int min = 1;
-        int range = max - min +1;
+        int range = max - min + 1;
         Scanner Scanner1 = new Scanner(System.in);
         System.out.println("Type in your Question:");
-        String userQuestion = Scanner1.nextLine();
-        System.out.println("Roll the 8 Ball: Yes(1) No(2)");
-        int userInput = Scanner1.nextInt();
-
-        if (userInput == 1 ){
-            int randNumber = (int)Math.random() * range + min;
+        String userQuestion = Scanner1.next();
+        System.out.println("Roll the 8 Ball: Yes(1) or No(2)");
+        double Input = Scanner1.nextDouble();
+        System.out.println("Confirmed");
+    
+        if (Input == 1 ){
+        System.out.println("Rolling...");
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException ie) {
+            Thread.currentThread().interrupt();
+        }
+        double randNumber = (int)(Math.random() * range) + min;
             if (randNumber == 1){
             System.out.println("It is Certain");
         } else if (randNumber == 2){
@@ -43,8 +53,20 @@ public class eightBall {
             System.out.println("Cannot predict now");
         }else if (randNumber == 15){
             System.out.println("Concentrate and ask again");
+        }else if (randNumber == 16){
+            System.out.println("My reply is no");
+        }else if (randNumber == 17){
+            System.out.println("My sources say no");
+        }else if (randNumber == 18){
+            System.out.println("Outlook not so good");
+        }else if (randNumber == 19){
+            System.out.println("Very doubtful");
+        }else if (randNumber == 20){
+            System.out.println("Don't count on it");
         }else{
             System.out.println("ok buddy");
         }
     }
-    }}
+}
+}
+
