@@ -10,7 +10,7 @@ public class eightBall {
         int range = max - min + 1;
         Scanner Scanner1 = new Scanner(System.in);
         System.out.println("Type in your Question:");
-        String userQuestion = Scanner1.next();
+        String userQuestion = Scanner1.nextLine();
         System.out.println("Roll the 8 Ball: Yes(1) or No(2)");
         double Input = Scanner1.nextDouble();
         System.out.println("Confirmed");
@@ -18,7 +18,7 @@ public class eightBall {
         if (Input == 1 ){
         System.out.println("Rolling...");
         try {
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
         }
